@@ -37,9 +37,9 @@ export const getPhoto = (id) => async (dispatch) => {
 
     if (response.ok === false) throw new Error(data.message);
 
-    dispatch(fetchSuccess(data));
+    return dispatch(fetchSuccess(data));
   } catch (error) {
-    dispatch(fetchError(error.message));
+    return dispatch(fetchError(error.message));
   }
 };
 
