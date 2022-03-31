@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import VisualizacaoImg from "../../Assets/visualizacao.svg";
-import { getPhoto } from "../../Store/photo";
-import { openModal } from "../../Store/modal";
+import VisualizacaoImg from "../../assets/visualizacao.svg";
+import { getPhoto } from "../../providers/photo";
+import { openModal } from "../../providers/modal";
 import Image from "../Helper/Image";
 
 const PhotoItem = styled.li`

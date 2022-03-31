@@ -1,13 +1,14 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { ReactComponent as MinhasFotos } from "../../Assets/feed.svg";
-import { ReactComponent as Estatisticas } from "../../Assets/estatisticas.svg";
-import { ReactComponent as AdicionarFoto } from "../../Assets/adicionar.svg";
-import { ReactComponent as Sair } from "../../Assets/sair.svg";
 import styled from "styled-components";
-import useMedia from "../../Hooks/useMedia";
 import { useDispatch } from "react-redux";
-import { userLogout } from "../../Store/user";
+import { userLogout } from "../../providers/user";
+import useMedia from "../../hooks/useMedia";
+
+import { ReactComponent as MinhasFotos } from "../../assets/feed.svg";
+import { ReactComponent as Estatisticas } from "../../assets/estatisticas.svg";
+import { ReactComponent as AdicionarFoto } from "../../assets/adicionar.svg";
+import { ReactComponent as Sair } from "../../assets/sair.svg";
 
 const NavUser = styled.nav`
   &.navDesktop {

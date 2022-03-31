@@ -1,4 +1,4 @@
-import { PHOTO_GET } from "../api";
+import { PHOTO_GET } from "../api/api";
 import { createSlice } from "@reduxjs/toolkit";
 
 const slice = createSlice({

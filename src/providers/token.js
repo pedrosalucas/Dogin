@@ -1,4 +1,4 @@
-import { TOKEN_POST } from "../api";
+import { TOKEN_POST } from "../api/api";
 import createAsyncSlice from "./helper/createAsyncSlice";
 
 const slice = createAsyncSlice({

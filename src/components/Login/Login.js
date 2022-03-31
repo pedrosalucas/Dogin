@@ -5,7 +5,7 @@ import LoginCreate from "./LoginCreate";
 import LoginForm from "./LoginForm";
 import LoginPasswordLost from "./LoginPasswordLost";
 import LoginPasswordReset from "./LoginPasswordReset";
-import LoginImg from "../../Assets/login.jpg";
+import LoginImg from "../../assets/login.jpg";
 import NotFound from "../NotFound";
 import { useSelector } from "react-redux";
 import Loading from "../Helper/Loading";

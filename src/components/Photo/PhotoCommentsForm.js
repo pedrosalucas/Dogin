@@ -1,8 +1,8 @@
 import React from 'react';
 import Error from '../Helper/Error';
-import { COMMENT_POST } from '../../api';
-import { ReactComponent as EnviarSvg } from '../../Assets/enviar.svg';
-import useFetch from '../../Hooks/useFetch';
+import { COMMENT_POST } from '../../api/api';
+import { ReactComponent as EnviarSvg } from '../../assets/enviar.svg';
+import useFetch from '../../hooks/useFetch';
 import styled, { keyframes } from 'styled-components';
 
 const latir = keyframes`

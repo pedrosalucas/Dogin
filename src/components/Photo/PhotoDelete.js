@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { POHOT_DELETE } from '../../api';
-import useFetch from '../../Hooks/useFetch';
+import { POHOT_DELETE } from '../../api/api';
+import useFetch from '../../hooks/useFetch';
 
 const ButtonDeletePhoto = styled.button`
     background-color: #ddd;

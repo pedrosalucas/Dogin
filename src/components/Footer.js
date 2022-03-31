@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ReactComponent as DogsLogo } from '../Assets/dogs-footer.svg';
+import { ReactComponent as DogsLogo } from '../assets/dogs-footer.svg';
 
 const FooterStyled = styled.footer`
     background-color: #fb1;

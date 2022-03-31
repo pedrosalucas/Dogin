@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import useForm from '../../Hooks/useForm';
-import useFetch from '../../Hooks/useFetch';
+import useForm from '../../hooks/useForm';
+import useFetch from '../../hooks/useFetch';
 import Error from '../Helper/Error';
 import Input from '../Forms/Input';
 import Button from '../Forms/Button';
-import { PHOTO_POST } from '../../api';
+import { PHOTO_POST } from '../../api/api';
 import { useNavigate } from 'react-router-dom';
 import Head from '../Helper/Head';
 

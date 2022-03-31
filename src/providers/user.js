@@ -1,4 +1,4 @@
-import { USER_GET } from "../api";
+import { USER_GET } from "../api/api";
 import createAsyncSlice from "./helper/createAsyncSlice";
 import { fetchToken, resetTokenState } from "./token";
 

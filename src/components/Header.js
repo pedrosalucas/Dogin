@@ -2,8 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { ReactComponent as Dogs } from "../Assets/dogs.svg";
-import UsuarioSVG from "../Assets/usuario.svg";
+import { ReactComponent as Dogs } from "../assets/dogs.svg";
+import UsuarioSVG from "../assets/usuario.svg";
 
 const HeaderContainer = styled.header`
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);

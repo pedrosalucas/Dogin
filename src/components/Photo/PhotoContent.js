@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import PhotoComments from "./PhotoComments";
-import VisualizacoesBlackSvg from "../../Assets/visualizacao-black.svg";
+import VisualizacoesBlackSvg from "../../assets/visualizacao-black.svg";
 import PhotoDelete from "./PhotoDelete";
 import Image from "../Helper/Image";
 import { useSelector } from "react-redux";
