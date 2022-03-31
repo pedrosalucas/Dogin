@@ -5,12 +5,12 @@ import { autoLogin } from "./providers/user";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
-import Login from "./components/Login/Login";
-import User from "./components/User/User";
+import Home from "./pages/HomePage";
+import Login from "./pages/Login";
+import User from "./pages/User/User";
 import UserProfile from "./components/User/UserProfile";
-import Photo from "./components/Photo/Photo";
-import NotFound from "./components/NotFound";
+import Photo from "./pages/Photo";
+import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/Helper/ProtectedRoute";
 
 import "./styles/App.css";

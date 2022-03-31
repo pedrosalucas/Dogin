@@ -1,12 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
-import Feed from "../Feed/Feed";
-import Head from "../Helper/Head";
+
 import NotFound from "../NotFound";
-import UserHeader from "./UserHeader";
-import UserPhotoPost from "./UserPhotoPost";
-import UserStats from "./UserStats";
+import Feed from "../../components/Feed/Feed";
+import Head from "../../components/Helper/Head";
+import UserHeader from "../../components/User/UserHeader";
+import UserPhotoPost from "../../components/User/UserPhotoPost";
+import UserStats from "../../components/User/UserStats";
 
 const User = () => {
   const { data } = useSelector((state) => state.user);

@@ -2,10 +2,11 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getPhoto } from "../../providers/photo";
-import Error from "../Helper/Error";
-import Head from "../Helper/Head";
-import Loading from "../Helper/Loading";
-import PhotoContent from "./PhotoContent";
+
+import Error from "../../components/Helper/Error";
+import Head from "../../components/Helper/Head";
+import Loading from "../../components/Helper/Loading";
+import PhotoContent from "../../components/Photo/PhotoContent";
 
 const Photo = () => {
   const { id } = useParams();
