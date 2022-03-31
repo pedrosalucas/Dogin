@@ -8,9 +8,9 @@ import Footer from "./components/Footer";
 import Home from "./pages/HomePage";
 import Login from "./pages/Login";
 import User from "./pages/User";
-import UserProfile from "./components/User/UserProfile";
 import Photo from "./pages/Photo";
 import NotFound from "./pages/NotFound";
+import UserProfile from "./components/User/UserProfile";
 import ProtectedRoute from "./components/Helper/ProtectedRoute";
 
 import "./styles/App.css";

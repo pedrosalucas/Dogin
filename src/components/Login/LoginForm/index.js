@@ -1,53 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
-import Button from "../Forms/Button";
-import Input from "../Forms/Input";
-import Error from "../Helper/Error";
-import userForm from "../../hooks/useForm";
-import Head from "../Helper/Head";
+import userForm from "../../../hooks/useForm";
 import { useDispatch, useSelector } from "react-redux";
-import { userLogin } from "../../providers/user";
+import { userLogin } from "../../../providers/user";
 
-const FormStyled = styled.form`
-  margin-bottom: 2rem;
-`;
+import Button from "../../Forms/Button";
+import Input from "../../Forms/Input";
+import Error from "../../Helper/Error";
+import Head from "../../Helper/Head";
 
-const LinkPerdeuSenha = styled(Link)`
-  display: inline-block;
-  color: #666;
-  padding: 0.5rem 0;
-  line-height: 1;
-
-  &:after {
-    content: "";
-    height: 2px;
-    width: 100%;
-    background-color: currentColor;
-    display: block;
-  }
-`;
-
-const DivCadastreSe = styled.div`
-  margin: 4rem 0;
-
-  h2 {
-    font-family: var(--type-secundary);
-
-    &:after {
-      content: "";
-      display: block;
-      background-color: #ddd;
-      height: 0.5rem;
-      width: 3rem;
-      border-radius: 0.2rem;
-    }
-  }
-
-  p {
-    margin: 2rem 0;
-  }
-`;
+import { DivCadastreSe, FormStyled, LinkPerdeuSenha } from "./styles";
 
 const LoginForm = () => {
   const username = userForm();

@@ -1,12 +1,7 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import VisualizacaoImg from "../../assets/visualizacao.svg";
-import { getPhoto } from "../../providers/photo";
-import { openModal } from "../../providers/modal";
-import Image from "../Helper/Image";
+import VisualizacaoImg from "../../../assets/visualizacao.svg";
 
-const PhotoItem = styled.li`
+export const PhotoItem = styled.li`
   display: grid;
   border-radius: 0.2rem;
   overflow: hidden;
@@ -52,22 +47,3 @@ const PhotoItem = styled.li`
     }
   }
 `;
-
-const FeedPhotosItem = ({ photo }) => {
-  const dispatch = useDispatch();
-  const {} = useSelector((state) => state);
-
-  function handleClick() {
-    dispatch(openModal());
-    dispatch(getPhoto(photo.id));
-  }
-
-  return (
-    <PhotoItem onClick={handleClick}>
-      <Image classWrapper="imgElement" src={photo.src} alt={photo.title} />
-      <span className="visualizacao">{photo.acessos}</span>
-    </PhotoItem>
-  );
-};
-
-export default FeedPhotosItem;

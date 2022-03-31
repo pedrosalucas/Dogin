@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 
 import NotFound from "../NotFound";
-import Feed from "../../components/Feed/Feed";
+import Feed from "../../components/Feed";
 import Head from "../../components/Helper/Head";
 import UserHeader from "../../components/User/UserHeader";
 import UserPhotoPost from "../../components/User/UserPhotoPost";

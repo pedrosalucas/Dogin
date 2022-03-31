@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import FeedModal from "./FeedModal";
-import FeedPhotos from "./FeedPhotos";
 import propTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { loadNewPhotos, resetFeedState } from "../../providers/feed";
+
+import FeedModal from "./FeedModal";
+import FeedPhotos from "./FeedPhotos";
 import Loading from "../Helper/Loading";
 import Error from "../Helper/Error";
 
