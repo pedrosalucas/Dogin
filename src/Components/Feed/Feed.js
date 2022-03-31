@@ -1,53 +1,72 @@
-import React from 'react';
-import FeedModal from './FeedModal';
-import FeedPhotos from './FeedPhotos';
-import propTypes from 'prop-types';
+import React, { useEffect } from "react";
+import FeedModal from "./FeedModal";
+import FeedPhotos from "./FeedPhotos";
+import propTypes from "prop-types";
+import { useDispatch, useSelector } from "react-redux";
+import { loadNewPhotos, resetFeedState } from "../../Store/feed";
+import Loading from "../Helper/Loading";
+import Error from "../Helper/Error";
 
 const Feed = ({ user }) => {
-    const [modalPhoto, setModalPhoto] = React.useState(null);
-    const [pages, setPages] = React.useState([ 1 ]);
-    const [infinite, setInfinite] = React.useState(true);
+  const [modalPhoto, setModalPhoto] = React.useState(null);
+  const dispatch = useDispatch();
+  const { list, loading, hasContent, error } = useSelector(
+    (state) => state.feed
+  );
 
-    React.useEffect(() => {
-        let wait = false;
-        function ifiniteScroll() {
-            if( infinite ) {
-                const scroll = window.scrollY;
-                const height = document.body.offsetHeight - window.innerHeight;
-                if( scroll > height * 0.75 && !wait ) {
-                    setPages(pages => [...pages, pages.length + 1]);
-                    wait = true;
-                    setTimeout(() => {
-                        wait = false;
-                    }, 500);
-                }
-            }
+  useEffect(() => {
+    dispatch(resetFeedState());
+    dispatch(loadNewPhotos({ total: 6, user }));
+  }, [dispatch, user]);
+
+  React.useEffect(() => {
+    let wait = false;
+    function ifiniteScroll() {
+      if (hasContent) {
+        const scroll = window.scrollY;
+        const height = document.body.offsetHeight - window.innerHeight;
+        if (scroll > height * 0.75 && !wait) {
+          dispatch(loadNewPhotos({ total: 6, user }));
+          wait = true;
+          setTimeout(() => {
+            wait = false;
+          }, 2000);
         }
+      }
+    }
 
-        window.addEventListener('wheel', ifiniteScroll);
-        window.addEventListener('scroll', ifiniteScroll);
-        return (() => {
-            window.removeEventListener('wheel', ifiniteScroll);
-            window.removeEventListener('scroll', ifiniteScroll);
-        });
-    }, []);
+    window.addEventListener("wheel", ifiniteScroll);
+    window.addEventListener("scroll", ifiniteScroll);
+    return () => {
+      window.removeEventListener("wheel", ifiniteScroll);
+      window.removeEventListener("scroll", ifiniteScroll);
+    };
+  }, [hasContent, user, dispatch]);
 
-    return (
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center',}}>
-            { modalPhoto && <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} /> }
-            {pages.map(item => {
-                return <FeedPhotos key={item} user={user} page={item} setModalPhoto={setModalPhoto} setInfinite={setInfinite} />;
-            })}
-        </div>
-    );
+  return (
+    <div
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
+      {modalPhoto && (
+        <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />
+      )}
+      {list.length !== 0 && <FeedPhotos setModalPhoto={setModalPhoto} />}
+
+      {loading && <Loading />}
+      {error && <Error error={error} />}
+    </div>
+  );
 };
 
 Feed.defaultProps = {
-    user: 0,
+  user: 0,
 };
 
 Feed.propTypes = {
-    user: propTypes.oneOfType([propTypes.string.isRequired, propTypes.number.isRequired])
+  user: propTypes.oneOfType([
+    propTypes.string.isRequired,
+    propTypes.number.isRequired,
+  ]),
 };
 
 export default Feed;

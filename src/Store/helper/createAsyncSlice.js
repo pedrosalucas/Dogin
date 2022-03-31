@@ -22,6 +22,11 @@ const createAsyncSlice = (config) => {
         state.loading = false;
         state.error = action.payload;
       },
+      resetState(state) {
+        state.data = null;
+        state.loading = false;
+        state.error = null;
+      },
       ...config.reducers,
     },
   });

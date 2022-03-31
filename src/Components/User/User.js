@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
-import { UserContext } from "../../UserContext";
 import Feed from "../Feed/Feed";
 import Head from "../Helper/Head";
 import NotFound from "../NotFound";

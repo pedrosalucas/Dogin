@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './Components/Footer';
@@ -6,17 +6,23 @@ import Header from './Components/Header';
 import Home from './Components/Home';
 import Login from './Components/Login/Login';
 import User from './Components/User/User';
-import { UserStorage } from './UserContext';
 import ProtectedRoute from './Components/Helper/ProtectedRoute';
 import Photo from './Components/Photo/Photo';
 import UserProfile from './Components/User/UserProfile';
 import NotFound from './Components/NotFound';
+import { useDispatch } from 'react-redux';
+import { autoLogin } from './Store/user';
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(autoLogin())
+  }, [dispatch])
+
   return (
     <div className="App">
       <BrowserRouter>
-        <UserStorage>
           <Header />
           <main className="AppBody">
             <Routes>
@@ -29,7 +35,6 @@ const App = () => {
             </Routes>
           </main>
           <Footer />
-        </UserStorage>
       </BrowserRouter>
     </div>
   );

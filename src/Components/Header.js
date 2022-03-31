@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as Dogs } from "../Assets/dogs.svg";
 import UsuarioSVG from "../Assets/usuario.svg";
-import { UserContext } from "../UserContext";
 
 const HeaderContainer = styled.header`
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);

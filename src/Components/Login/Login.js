@@ -1,7 +1,6 @@
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
-import { UserContext } from "../../UserContext";
 import LoginCreate from "./LoginCreate";
 import LoginForm from "./LoginForm";
 import LoginPasswordLost from "./LoginPasswordLost";
@@ -9,6 +8,7 @@ import LoginPasswordReset from "./LoginPasswordReset";
 import LoginImg from "../../Assets/login.jpg";
 import NotFound from "../NotFound";
 import { useSelector } from "react-redux";
+import Loading from "../Helper/Loading";
 
 const LoginSection = styled.section`
   display: grid;
@@ -43,9 +43,12 @@ const LoginSection = styled.section`
 `;
 
 const Login = () => {
-  const { data } = useSelector((state) => state.user);
+  const { data, loading } = useSelector((state) => state.user);
+
+  if (loading) return <Loading />;
 
   if (data) return <Navigate to="/conta" />;
+
   return (
     <LoginSection>
       <div className="formDiv">
