@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/HomePage";
 import Login from "./pages/Login";
-import User from "./pages/User/User";
+import User from "./pages/User";
 import UserProfile from "./components/User/UserProfile";
 import Photo from "./pages/Photo";
 import NotFound from "./pages/NotFound";

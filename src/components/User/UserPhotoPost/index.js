@@ -1,41 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
-import useForm from '../../hooks/useForm';
-import useFetch from '../../hooks/useFetch';
-import Error from '../Helper/Error';
-import Input from '../Forms/Input';
-import Button from '../Forms/Button';
-import { PHOTO_POST } from '../../api/api';
+import useForm from '../../../hooks/useForm';
+import useFetch from '../../../hooks/useFetch';
+import Error from '../../Helper/Error';
+import Input from '../../Forms/Input';
+import Button from '../../Forms/Button';
+import { PHOTO_POST } from '../../../api/api';
 import { useNavigate } from 'react-router-dom';
-import Head from '../Helper/Head';
+import Head from '../../Helper/Head';
+import { SectionPostPhoto } from './styles';
 
-const SectionPostPhoto = styled.section`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 2rem;
-
-    #img {
-        margin-bottom: 1rem;
-    }
-
-    .previewImg {
-        border-radius: 1rem;
-        background-size: cover;
-        background-position: center center; 
-    }
-
-    .previewImg::after {
-        content: '';
-        display: block;
-        height: 0;
-        padding-bottom: 100%;
-    }
-
-    @media (max-width: 40rem) {
-        grid-template-columns: 1fr;
-    }
-`;
 
 const UserPhotoPost = () => {
     const nome = useForm();

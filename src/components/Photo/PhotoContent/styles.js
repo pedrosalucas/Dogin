@@ -1,11 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
-import PhotoComments from "./PhotoComments";
-import VisualizacoesBlackSvg from "../../assets/visualizacao-black.svg";
-import PhotoDelete from "./PhotoDelete";
-import Image from "../Helper/Image";
-import { useSelector } from "react-redux";
+import VisualizacoesBlackSvg from "../../../assets/visualizacao-black.svg";
 
 const scaleUp = keyframes`
     to {
@@ -14,7 +8,7 @@ const scaleUp = keyframes`
         }
 `;
 
-const DivContent = styled.div`
+export const DivContent = styled.div`
   margin: auto;
   height: 36rem;
   border-radius: 0.2rem;
@@ -106,40 +100,3 @@ const DivContent = styled.div`
     }
   }
 `;
-
-const PhotoContent = ({ data, single }) => {
-  const { user } = useSelector((state) => state);
-  const { photo, comments } = data;
-
-  return (
-    <DivContent className={single ? "single" : ""}>
-      <div className="img">
-        <Image src={photo.src} alt={photo.title} />
-      </div>
-      <div className="detalhes">
-        <div>
-          <div>
-            <p className="autor">
-              {user.data && user.data.username === photo.author ? (
-                <PhotoDelete id={photo.id} />
-              ) : (
-                <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
-              )}
-              <span className="visualizacoes">{photo.acessos}</span>
-            </p>
-            <h1 className="title">
-              <Link to={`/foto/${photo.id}`}>{photo.title}</Link>
-            </h1>
-            <ul className="atributos">
-              <li>{photo.peso} kg</li>
-              <li>{photo.idade} anos</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <PhotoComments single={single} id={photo.id} comments={comments} />
-    </DivContent>
-  );
-};
-
-export default PhotoContent;
