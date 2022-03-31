@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { getPhoto } from "../../Store/photo";
+import { closeModal } from "../../Store/modal";
 import Error from "../Helper/Error";
 import Loading from "../Helper/Loading";
 import PhotoContent from "../Photo/PhotoContent";
@@ -22,25 +22,27 @@ const ModalPost = styled.div`
   }
 `;
 
-const FeedModal = ({ photo, setModalPhoto }) => {
-  const { data, error, loading } = useSelector((state) => state.photo);
+const FeedModal = () => {
+  const { modal, photo } = useSelector((state) => state);
+  const { data, error, loading } = photo;
   const dispatch = useDispatch();
 
-  React.useEffect(() => {
-    dispatch(getPhoto(photo.id));
-  }, [photo, dispatch]);
-
   function handleOutSideClick(event) {
-    if (event.target === event.currentTarget) {
-      setModalPhoto(null);
-    }
+    if (event.target === event.currentTarget) dispatch(closeModal());
   }
+
+  useEffect(() => {
+    dispatch(closeModal())
+  }, [dispatch])
+
+  if (!modal.isOpen) return null;
 
   return (
     <ModalPost onClick={handleOutSideClick}>
-      {error && <Error error={error} />}
-      {loading && <Loading />}
       {data && <PhotoContent data={data} />}
+
+      {loading && <Loading />}
+      {error && <Error error={error} />}
     </ModalPost>
   );
 };
