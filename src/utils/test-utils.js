@@ -7,7 +7,7 @@ import { reducer } from "../providers/configureStore";
 
 const customRender = (
   ui,
-  {initialState, store = configureStore({ reducer, initialState }), ...renderOptions }
+  {initialState = {}, store = configureStore({ reducer, initialState }), ...renderOptions }
 ) => {
 
   function Wrapper({ children }) {

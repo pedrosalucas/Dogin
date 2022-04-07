@@ -1,40 +1,49 @@
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 import { render, screen } from "../../../utils/test-utils";
+import configureStore from "redux-mock-store";
 
 import LoginForm from "./index.js";
 
 import { userLogin } from "../../../providers/user";
 
-const setup = () => {
-  jest.clearAllMocks();
+jest.mock("../../../providers/user", () => ({
+  ...jest.requireActual("../../../providers/user"),
+  userLogin: jest.fn(),
+}));
 
-  let state = {
-    token: { loading: true },
-    user: { loading: true },
-  };
+const mockStore = configureStore([]);
 
-  return render(<LoginForm />, {
-    initialState: { token: { loading: true} }
+describe("<LoginForm />", () => {
+  let store;
+
+  beforeEach(() => {
+    store = mockStore({
+      token: { loading: false },
+      user: { loading: false },
+    });
+
+    store.dispatch = jest.fn();
+
+    render(<LoginForm />, { store: store });
   });
-};
-
-describe("Do login", () => {
-  test("with login data right.", () => {
-    setup();
-
+  test("do login.", () => {
     const titleLogin = screen.getByText("Login");
     expect(titleLogin).toBeInTheDocument();
 
     const inputUsername = screen.getByLabelText("Usuário");
-    userEvent.type(inputUsername, "dog");
+    userEvent.type(inputUsername, "dogUsername");
+    expect(inputUsername).toHaveAttribute('value', 'dogUsername');
+
     const inputPassword = screen.getByLabelText("Senha");
-    userEvent.type(inputPassword, "dog");
+    userEvent.type(inputPassword, "dogPassword");
+    expect(inputPassword).toHaveAttribute('value', 'dogPassword');
 
     const loginButton = screen.getByRole("button");
-    expect(loginButton).toBeDisabled();
-    // userEvent.click(loginButton);
+    expect(loginButton).not.toBeDisabled();
 
-    // expect(titleLogin).not.toBeInTheDocument();
+    userEvent.click(loginButton);
+    expect(store.dispatch).toHaveBeenCalledTimes(1);
+    expect(userLogin).toHaveBeenCalledTimes(1);
   });
 });
