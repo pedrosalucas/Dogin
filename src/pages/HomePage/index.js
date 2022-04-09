@@ -6,7 +6,7 @@ import Head from "../../components/Helper/Head";
 const Home = () => {
   return (
     <section className="container mainContainer">
-      <Head title="Fotos" description="Home do site Dogs." />
+      <Head title="Fotos" description="Home do site Dogin." />
       <Feed />
     </section>
   );
