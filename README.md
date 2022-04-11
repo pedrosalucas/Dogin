@@ -7,7 +7,7 @@ This project came from two courses, [React](https://www.origamid.com/curso/react
 <br/><br/>
 
 ## 🐾 Tests
-Description of the unit tests by Jest.
+In addition to the topics covered in the courses, I build unit tests using Jest. To do that, I studied the React Testing course at CodeAcademy, the free part, and a lot of Googling 😂.
 <br/><br/>
 
 ## 🐾 What I Learned
