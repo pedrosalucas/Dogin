@@ -7,8 +7,8 @@ This project came from two courses, [React](https://www.origamid.com/curso/react
 <br/><br/>
 
 ## 🐾 Tests
-In addition to the topics covered in the courses, I build unit tests using Jest. To do that, I studied the React Testing course at CodeAcademy, the free part, and a lot of Googling 😂.
+In addition to the topics covered in the courses, I've been building unit tests using Jest. To do that, I studied the [React Testing](https://www.codecademy.com/learn/learn-react-testing) course at CodeAcademy, the free part, and a lot of Googling 😂.
 <br/><br/>
 
 ## 🐾 What I Learned
-What I learned from this project.
+I learned to build an App by React using things like states context and getting data by API. I also used Styled Components to style the components and develop tests to guarantee that the App works expectedly.
