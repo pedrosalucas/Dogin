@@ -3,7 +3,7 @@ Dogin is a social app for adorable pets where your pet would make new friends. O
 <br/><br/>
 
 ## 🐾 Courses 
-Description of the both courses, React and Redux.
+This project came from two courses, [React](https://www.origamid.com/curso/react-completo/) and [Redux](https://www.origamid.com/curso/redux-com-react) courses. In React course was made the majority part of the project, like the pages, routes, events, and API usage. And in the Redux course, the context of the states was refactored to use Redux mechanisms.
 <br/><br/>
 
 ## 🐾 Tests
