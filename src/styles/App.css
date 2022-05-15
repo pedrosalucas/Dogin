@@ -65,7 +65,6 @@ input {
 }
 
 .title {
-  text-transform: capitalize;
   font-family: var(--type-secondary);
   line-height: 1;
   font-size: 3rem;

@@ -13,7 +13,7 @@ const LoginPasswordReset = () => {
   const [login, setLogin] = React.useState("");
   const [key, setKey] = React.useState("");
   const password = useForm();
-  const { data, error, loading, request } = useFetch();
+  const { error, loading, request } = useFetch();
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -36,7 +36,7 @@ const LoginPasswordReset = () => {
         key,
         password: password.value,
       });
-      const { response, json } = await request(url, options);
+      const { response } = await request(url, options);
       if (response.ok) {
         navigate("/login");
       }

@@ -27,6 +27,7 @@ const LoginPasswordLost = () => {
     <section className="animeLeft">
       <Head title="Recuperar Senha" />
       <h1 className="title">Perdeu a senha?</h1>
+
       {data ? (
         <p style={{ color: "#4c1" }}>{data}</p>
       ) : (
@@ -39,6 +40,7 @@ const LoginPasswordLost = () => {
           )}
         </form>
       )}
+
       <Error error={error} />
     </section>
   );
