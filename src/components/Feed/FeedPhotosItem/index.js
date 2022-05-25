@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getPhoto } from "../../../providers/photo";
 import { openModal } from "../../../providers/modal";
 
@@ -8,7 +8,6 @@ import { PhotoItem } from "./styles";
 
 const FeedPhotosItem = ({ photo }) => {
   const dispatch = useDispatch();
-  const {} = useSelector((state) => state);
 
   function handleClick() {
     dispatch(openModal());
