@@ -13,7 +13,7 @@ import { MobileButton, NavUser } from "./styles";
 const UserHeaderNav = () => {
   const dispatch = useDispatch();
 
-  const mobile = useMedia("(max-width: 40rem");
+  const mobile = useMedia("max-width: 40rem");
   const [mobileMenu, setMobileMenu] = React.useState(false);
   const { pathname } = useLocation();
 
@@ -33,10 +33,10 @@ const UserHeaderNav = () => {
     <>
       {mobileMenuElement}
       <NavUser
-        className={`${mobile ? "navMobile" : "navDesktop"} ${
-          mobileMenu ? "navMobileActive" : ""
-        }
-                `}
+        className={`
+          ${mobile ? "navMobile" : "navDesktop"} 
+          ${mobileMenu ? "navMobileActive" : ""}
+        `}
       >
         <NavLink to="/conta" end activeClassName="activeNavUser">
           <MinhasFotos />

@@ -9,7 +9,7 @@ import useFetch from "../../../hooks/useFetch";
 jest.mock("../../../hooks/useFetch");
 
 const setup = ({
-  dataUseFetch = {},
+  dataUseFetch = null,
   loadingUseFetch = false,
   errorUseFetch = false,
   requestFn = jest.fn(),

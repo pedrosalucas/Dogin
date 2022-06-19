@@ -7,13 +7,15 @@ import { reducer } from "../providers/configureStore";
 
 const customRender = (
   ui,
-  {initialState = {}, store = configureStore({ reducer, initialState }), ...renderOptions }
+  {initialState = {}, store = configureStore({ reducer, initialState }), pathname = '/', ...renderOptions }
 ) => {
 
   function Wrapper({ children }) {
     return (
       <Provider store={store}>
-        <MemoryRouter>{children}</MemoryRouter>
+        <MemoryRouter initialEntries={[pathname]}>
+          {children}
+        </MemoryRouter>
       </Provider>
     );
   }
