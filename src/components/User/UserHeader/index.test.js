@@ -5,10 +5,8 @@ import UserHeader from "./index.js";
 
 jest.mock("../../../hooks/useMedia");
 
-const setup = ({ mockLocation = '/' }) => {
-
-  
-  return render(<UserHeader />, { pathname: mockLocation});
+const setup = ({ mockLocation = "/" }) => {
+  return render(<UserHeader />, { pathname: mockLocation });
 };
 
 describe("<UserHeader />", () => {
